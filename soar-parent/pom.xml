@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.heng.soar</groupId>
+  <artifactId>soar-parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>soar-parent</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+  </properties>
+  <modules>
+  	<module>soar-common</module>
+  	<module>soar-starter</module>
+    <module>soar-module</module>
+  </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>1.5.3.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+                 <exclusions>
+			      	<exclusion>
+				         <groupId>org.springframework.boot</groupId>
+				         <artifactId>spring-boot-starter-logging</artifactId>
+			      	</exclusion>
+					<exclusion>
+			            <groupId>org.springframework.boot</groupId>
+			            <artifactId>spring-boot-starter-tomcat</artifactId>
+		        	</exclusion>
+			  	</exclusions>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
